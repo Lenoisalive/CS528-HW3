@@ -1,0 +1,354 @@
+[
+  {
+    "insertId": "6ac2ab810009f1b9a237e10b",
+    "jsonPayload": {
+      "event": "unsupported_method",
+      "message": "HTTP method not implemented: PUT '/1.html'",
+      "method": "PUT",
+      "path": "/1.html",
+      "status": 501
+    },
+    "labels": {
+      "execution_id": "Qz6Ycm5mExOu",
+      "goog-drz-cloudfunctions-id": "hw3-file-service",
+      "goog-drz-cloudfunctions-location": "us-central1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "0010dd860719694a17c67216fbe9edccd5f88d49a2c6377502ac54c6f6539b2730d99c04ad4171f488ef4d0b9e3278567529620993112c506c6b8fcd623e9467c58efce932f33c0ac874772107",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260915_3_12_14_RC00"
+    },
+    "logName": "projects/cs-528-508021/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2026-10-04T19:39:45.859444038Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "hw3-file-service",
+        "location": "us-central1",
+        "project_id": "cs-528-508021",
+        "revision_name": "hw3-file-service-00002-tux",
+        "service_name": "hw3-file-service"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-10-04T19:39:45.651705Z"
+  },
+  {
+    "insertId": "6ac2ab810009f178196a1974",
+    "labels": {
+      "execution_id": "Qz6Ycm5mExOu",
+      "goog-drz-cloudfunctions-id": "hw3-file-service",
+      "goog-drz-cloudfunctions-location": "us-central1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "0010dd860719694a17c67216fbe9edccd5f88d49a2c6377502ac54c6f6539b2730d99c04ad4171f488ef4d0b9e3278567529620993112c506c6b8fcd623e9467c58efce932f33c0ac874772107",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260915_3_12_14_RC00"
+    },
+    "logName": "projects/cs-528-508021/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2026-10-04T19:39:45.859444038Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "hw3-file-service",
+        "location": "us-central1",
+        "project_id": "cs-528-508021",
+        "revision_name": "hw3-file-service-00002-tux",
+        "service_name": "hw3-file-service"
+      },
+      "type": "cloud_run_revision"
+    },
+    "textPayload": "HTTP method not implemented: PUT '/1.html'",
+    "timestamp": "2026-10-04T19:39:45.651640Z"
+  },
+  {
+    "insertId": "6ac2ab790007f6fc167ec32b",
+    "jsonPayload": {
+      "bucket": "cs528hw2",
+      "event": "file_not_found",
+      "filename": "this_file_does_not_exist.txt",
+      "message": "File not found: 'this_file_does_not_exist.txt'",
+      "method": "GET",
+      "object_name": "pages/this_file_does_not_exist.txt",
+      "path": "/this_file_does_not_exist.txt",
+      "status": 404
+    },
+    "labels": {
+      "execution_id": "XuCAALdV4udg",
+      "goog-drz-cloudfunctions-id": "hw3-file-service",
+      "goog-drz-cloudfunctions-location": "us-central1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "0010dd860719694a17c67216fbe9edccd5f88d49a2c6377502ac54c6f6539b2730d99c04ad4171f488ef4d0b9e3278567529620993112c506c6b8fcd623e9467c58efce932f33c0ac874772107",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260915_3_12_14_RC00"
+    },
+    "logName": "projects/cs-528-508021/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2026-10-04T19:39:37.530318504Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "hw3-file-service",
+        "location": "us-central1",
+        "project_id": "cs-528-508021",
+        "revision_name": "hw3-file-service-00002-tux",
+        "service_name": "hw3-file-service"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-10-04T19:39:37.521980Z"
+  },
+  {
+    "insertId": "6ac2ab790007f6a17c6b3643",
+    "labels": {
+      "execution_id": "XuCAALdV4udg",
+      "goog-drz-cloudfunctions-id": "hw3-file-service",
+      "goog-drz-cloudfunctions-location": "us-central1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "0010dd860719694a17c67216fbe9edccd5f88d49a2c6377502ac54c6f6539b2730d99c04ad4171f488ef4d0b9e3278567529620993112c506c6b8fcd623e9467c58efce932f33c0ac874772107",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260915_3_12_14_RC00"
+    },
+    "logName": "projects/cs-528-508021/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2026-10-04T19:39:37.530318504Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "hw3-file-service",
+        "location": "us-central1",
+        "project_id": "cs-528-508021",
+        "revision_name": "hw3-file-service-00002-tux",
+        "service_name": "hw3-file-service"
+      },
+      "type": "cloud_run_revision"
+    },
+    "textPayload": "File not found: 'this_file_does_not_exist.txt'",
+    "timestamp": "2026-10-04T19:39:37.521889Z"
+  },
+  {
+    "insertId": "6ac2aa570004f11a9eccea31",
+    "jsonPayload": {
+      "event": "unsupported_method",
+      "message": "HTTP method not implemented: HEAD '/1.html'",
+      "method": "HEAD",
+      "path": "/1.html",
+      "status": 501
+    },
+    "labels": {
+      "execution_id": "913Jku3o264P",
+      "goog-drz-cloudfunctions-id": "hw3-file-service",
+      "goog-drz-cloudfunctions-location": "us-central1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "0010dd860719694a17c67216fbe9edccd5f88d49a2c6377502ac54c6f6539b2730d99c04ad4171f488ef4d0b9e3278567529620993112c506c6b8fcd623e9467c58efce932f33c0ac874772107",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260915_3_12_14_RC00"
+    },
+    "logName": "projects/cs-528-508021/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2026-10-04T19:34:47.450282635Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "hw3-file-service",
+        "location": "us-central1",
+        "project_id": "cs-528-508021",
+        "revision_name": "hw3-file-service-00002-tux",
+        "service_name": "hw3-file-service"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-10-04T19:34:47.323866Z"
+  },
+  {
+    "insertId": "6ac2aa570004f09b7be80a79",
+    "labels": {
+      "execution_id": "913Jku3o264P",
+      "goog-drz-cloudfunctions-id": "hw3-file-service",
+      "goog-drz-cloudfunctions-location": "us-central1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "0010dd860719694a17c67216fbe9edccd5f88d49a2c6377502ac54c6f6539b2730d99c04ad4171f488ef4d0b9e3278567529620993112c506c6b8fcd623e9467c58efce932f33c0ac874772107",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260915_3_12_14_RC00"
+    },
+    "logName": "projects/cs-528-508021/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2026-10-04T19:34:47.450282635Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "hw3-file-service",
+        "location": "us-central1",
+        "project_id": "cs-528-508021",
+        "revision_name": "hw3-file-service-00002-tux",
+        "service_name": "hw3-file-service"
+      },
+      "type": "cloud_run_revision"
+    },
+    "textPayload": "HTTP method not implemented: HEAD '/1.html'",
+    "timestamp": "2026-10-04T19:34:47.323739Z"
+  },
+  {
+    "insertId": "6ac2aa5400056709b00b79a0",
+    "jsonPayload": {
+      "event": "unsupported_method",
+      "message": "HTTP method not implemented: DELETE '/1.html'",
+      "method": "DELETE",
+      "path": "/1.html",
+      "status": 501
+    },
+    "labels": {
+      "execution_id": "Fe8tv3yDCpPC",
+      "goog-drz-cloudfunctions-id": "hw3-file-service",
+      "goog-drz-cloudfunctions-location": "us-central1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "0010dd860719694a17c67216fbe9edccd5f88d49a2c6377502ac54c6f6539b2730d99c04ad4171f488ef4d0b9e3278567529620993112c506c6b8fcd623e9467c58efce932f33c0ac874772107",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260915_3_12_14_RC00"
+    },
+    "logName": "projects/cs-528-508021/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2026-10-04T19:34:44.451211244Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "hw3-file-service",
+        "location": "us-central1",
+        "project_id": "cs-528-508021",
+        "revision_name": "hw3-file-service-00002-tux",
+        "service_name": "hw3-file-service"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "ERROR",
+    "timestamp": "2026-10-04T19:34:44.354057Z"
+  },
+  {
+    "insertId": "6ac2aa54000566c570dd7859",
+    "labels": {
+      "execution_id": "Fe8tv3yDCpPC",
+      "goog-drz-cloudfunctions-id": "hw3-file-service",
+      "goog-drz-cloudfunctions-location": "us-central1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "0010dd860719694a17c67216fbe9edccd5f88d49a2c6377502ac54c6f6539b2730d99c04ad4171f488ef4d0b9e3278567529620993112c506c6b8fcd623e9467c58efce932f33c0ac874772107",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260915_3_12_14_RC00"
+    },
+    "logName": "projects/cs-528-508021/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2026-10-04T19:34:44.451211244Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "hw3-file-service",
+        "location": "us-central1",
+        "project_id": "cs-528-508021",
+        "revision_name": "hw3-file-service-00002-tux",
+        "service_name": "hw3-file-service"
+      },
+      "type": "cloud_run_revision"
+    },
+    "textPayload": "HTTP method not implemented: DELETE '/1.html'",
+    "timestamp": "2026-10-04T19:34:44.353989Z"
+  },
+  {
+    "insertId": "6ac2aa510006426c9fff95f8",
+    "jsonPayload": {
+      "event": "unsupported_method",
+      "message": "HTTP method not implemented: PUT '/1.html'",
+      "method": "PUT",
+      "path": "/1.html",
+      "status": 501
+    },
+    "labels": {
+      "execution_id": "iTwdFJkSeowB",
+      "goog-drz-cloudfunctions-id": "hw3-file-service",
+      "goog-drz-cloudfunctions-location": "us-central1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "0010dd860719694a17c67216fbe9edccd5f88d49a2c6377502ac54c6f6539b2730d99c04ad4171f488ef4d0b9e3278567529620993112c506c6b8fcd623e9467c58efce932f33c0ac874772107",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260915_3_12_14_RC00"
+    },
+    "logName": "projects/cs-528-508021/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2026-10-04T19:34:41.452598613Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "hw3-file-service",
+        "location": "us-central1",
+        "project_id": "cs-528-508021",
+        "revision_name": "hw3-file-service-00002-tux",
+        "service_name": "hw3-file-service"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "ERROR",
+    "spanId": "2064449212099716103",
+    "timestamp": "2026-10-04T19:34:41.410220Z"
+  },
+  {
+    "insertId": "6ac2aa510006422a92077cc2",
+    "labels": {
+      "execution_id": "iTwdFJkSeowB",
+      "goog-drz-cloudfunctions-id": "hw3-file-service",
+      "goog-drz-cloudfunctions-location": "us-central1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "0010dd860719694a17c67216fbe9edccd5f88d49a2c6377502ac54c6f6539b2730d99c04ad4171f488ef4d0b9e3278567529620993112c506c6b8fcd623e9467c58efce932f33c0ac874772107",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260915_3_12_14_RC00"
+    },
+    "logName": "projects/cs-528-508021/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2026-10-04T19:34:41.452598613Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "hw3-file-service",
+        "location": "us-central1",
+        "project_id": "cs-528-508021",
+        "revision_name": "hw3-file-service-00002-tux",
+        "service_name": "hw3-file-service"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "2064449212099716103",
+    "textPayload": "HTTP method not implemented: PUT '/1.html'",
+    "timestamp": "2026-10-04T19:34:41.410154Z"
+  },
+  {
+    "insertId": "6ac2aa470001dd41e36c5dcb",
+    "jsonPayload": {
+      "bucket": "cs528hw2",
+      "event": "file_not_found",
+      "filename": "this_file_does_not_exist.txt",
+      "message": "File not found: 'this_file_does_not_exist.txt'",
+      "method": "GET",
+      "object_name": "pages/this_file_does_not_exist.txt",
+      "path": "/this_file_does_not_exist.txt",
+      "status": 404
+    },
+    "labels": {
+      "execution_id": "2vcTdhY3GbXs",
+      "goog-drz-cloudfunctions-id": "hw3-file-service",
+      "goog-drz-cloudfunctions-location": "us-central1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "0010dd860719694a17c67216fbe9edccd5f88d49a2c6377502ac54c6f6539b2730d99c04ad4171f488ef4d0b9e3278567529620993112c506c6b8fcd623e9467c58efce932f33c0ac874772107",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260915_3_12_14_RC00"
+    },
+    "logName": "projects/cs-528-508021/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2026-10-04T19:34:31.464466925Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "hw3-file-service",
+        "location": "us-central1",
+        "project_id": "cs-528-508021",
+        "revision_name": "hw3-file-service-00002-tux",
+        "service_name": "hw3-file-service"
+      },
+      "type": "cloud_run_revision"
+    },
+    "severity": "ERROR",
+    "spanId": "11789155820020033020",
+    "timestamp": "2026-10-04T19:34:31.122177Z"
+  },
+  {
+    "insertId": "6ac2aa470001d81df8da1c4f",
+    "labels": {
+      "execution_id": "2vcTdhY3GbXs",
+      "goog-drz-cloudfunctions-id": "hw3-file-service",
+      "goog-drz-cloudfunctions-location": "us-central1",
+      "goog-managed-by": "cloudfunctions",
+      "instanceId": "0010dd860719694a17c67216fbe9edccd5f88d49a2c6377502ac54c6f6539b2730d99c04ad4171f488ef4d0b9e3278567529620993112c506c6b8fcd623e9467c58efce932f33c0ac874772107",
+      "run.googleapis.com/base_image_versions": "us-docker.pkg.dev/serverless-runtimes/google-22-full/runtimes/python312:python312_20260915_3_12_14_RC00"
+    },
+    "logName": "projects/cs-528-508021/logs/run.googleapis.com%2Fstdout",
+    "receiveTimestamp": "2026-10-04T19:34:31.131811438Z",
+    "resource": {
+      "labels": {
+        "configuration_name": "hw3-file-service",
+        "location": "us-central1",
+        "project_id": "cs-528-508021",
+        "revision_name": "hw3-file-service-00002-tux",
+        "service_name": "hw3-file-service"
+      },
+      "type": "cloud_run_revision"
+    },
+    "spanId": "11789155820020033020",
+    "textPayload": "File not found: 'this_file_does_not_exist.txt'",
+    "timestamp": "2026-10-04T19:34:31.120861Z"
+  }
+]
