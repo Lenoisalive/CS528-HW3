@@ -56,7 +56,7 @@ gcloud config set project cs-528-508021
 
 The local user needs **Service Account Token Creator** on the service account. The service account needs **Pub/Sub Publisher** on the topic, **Pub/Sub Subscriber** on the subscription, and permission to read files and create/replace the GCS log. The current setup uses **Storage Object User** on `cs528hw2`; this grants access across the bucket, including `pages/`.
 
-Service 2 obtains and refreshes short-lived impersonated tokens through gcloud. No service account key file or `gcloud auth application-default login` is used. IAM setup commands are in [service2/README.md](service2/README.md).
+Service 2 obtains and refreshes short-lived impersonated tokens through gcloud. No service account key file or `gcloud auth application-default login` is used. The setup steps for a new laptop are below.
 
 ### Deploy Service 1
 
@@ -80,17 +80,86 @@ Set the endpoint in the terminal used for HTTP requests:
 FUNCTION_URL='https://hw3-file-service-5tn6zthkwq-uc.a.run.app'
 ```
 
-### Start Service 2 locally
+### Start Service 2 on a new laptop
+
+`service2/subscriber.py` is a long-running local subscriber. It receives forbidden-request messages from Pub/Sub, prints the country, filename, and method, and appends the same information to `gs://cs528hw2/forbidden_requests/log.txt`. It acknowledges a message only after the log is saved (or the event is already present), so failed writes can be retried without losing the message.
+
+The following commands use a macOS/Linux terminal. Install Git, Python 3.10+ with venv support, and the [Google Cloud CLI](https://cloud.google.com/sdk/docs/install), and ensure `git`, `python3`, and `gcloud` are available in your PATH. Service 2 does not require Apple Silicon; that restriction applies only to the supplied `http-client` binary.
+
+**1. Get the project.** Skip cloning if you already have a local copy.
 
 ```bash
-python3 -m venv /private/tmp/cs528-hw3-service2-venv
-/private/tmp/cs528-hw3-service2-venv/bin/python -m pip install -r service2/requirements.txt
-
-/private/tmp/cs528-hw3-service2-venv/bin/python service2/subscriber.py --check-auth
-/private/tmp/cs528-hw3-service2-venv/bin/python service2/subscriber.py
+git clone https://github.com/Lenoisalive/CS528-HW3.git
+cd CS528-HW3
 ```
 
-Keep this terminal open. `--check-auth` checks token acquisition without consuming messages or writing GCS. Press Ctrl+C to stop the subscriber.
+The existing cloud resources and deployed Service 1 can be reused. Moving Service 2 to another laptop does not require redeploying Service 1 or recreating the bucket, topic, or subscription.
+
+**2. Log in with your own Google account on the new laptop.**
+
+```bash
+gcloud auth login
+gcloud config set project cs-528-508021
+gcloud auth list --filter=status:ACTIVE --format='value(account)'
+```
+
+Use the account authorized to impersonate the project's service account. This is a normal gcloud login; do not run `gcloud auth application-default login`.
+
+**3. Configure permissions once, if not already granted.** A project administrator runs these commands. Replace `YOUR_GOOGLE_EMAIL` with the personal account used in step 2.
+
+```bash
+gcloud services enable iamcredentials.googleapis.com pubsub.googleapis.com storage.googleapis.com \
+  --project=cs-528-508021
+
+gcloud iam service-accounts add-iam-policy-binding \
+  hw3-microservice-sa@cs-528-508021.iam.gserviceaccount.com \
+  --project=cs-528-508021 \
+  --member='user:YOUR_GOOGLE_EMAIL' \
+  --role=roles/iam.serviceAccountTokenCreator
+
+gcloud pubsub subscriptions add-iam-policy-binding forbidden-requests-sub \
+  --project=cs-528-508021 \
+  --member='serviceAccount:hw3-microservice-sa@cs-528-508021.iam.gserviceaccount.com' \
+  --role=roles/pubsub.subscriber
+
+gcloud storage buckets add-iam-policy-binding gs://cs528hw2 \
+  --member='serviceAccount:hw3-microservice-sa@cs-528-508021.iam.gserviceaccount.com' \
+  --role=roles/storage.objectUser \
+  --condition=None
+```
+
+Token Creator lets your personal account obtain short-lived tokens for the service account. Subscriber and Storage Object User let that service account consume messages and read/create/replace the log. The bucket currently uses an unconditional bucket-level grant because conditional IAM requires Uniform bucket-level access; this grant also permits changes to the HW2 objects.
+
+These permissions belong to identities, not laptops. If you use the same Google account on a new laptop and the roles are already configured, skip the grants above. A different Google account needs its own Token Creator grant.
+
+**4. Install Python dependencies in a virtual environment.** Run from the repository root. The environment is stored outside the repository.
+
+```bash
+python3 -m venv "$HOME/.venvs/cs528-hw3-service2"
+source "$HOME/.venvs/cs528-hw3-service2/bin/activate"
+python -m pip install -r service2/requirements.txt
+```
+
+**5. Check impersonation, then start the subscriber.**
+
+```bash
+python service2/subscriber.py --check-auth
+python service2/subscriber.py
+```
+
+The authentication check should print `Impersonation token acquired for: hw3-microservice-sa@cs-528-508021.iam.gserviceaccount.com`. It does not display the token, consume messages, or verify GCS write permissions. The running subscriber should then print:
+
+```text
+Listening: projects/cs-528-508021/subscriptions/forbidden-requests-sub
+Identity: hw3-microservice-sa@cs-528-508021.iam.gserviceaccount.com
+Log: gs://cs528hw2/forbidden_requests/log.txt
+```
+
+Python explicitly passes the impersonated credentials to both cloud clients and refreshes tokens when needed. No service account key needs to be copied from the old laptop.
+
+**6. Verify the complete flow.** Keep the subscriber running and send the forbidden-country curl requests in Section 5 from another terminal. Confirm `FORBIDDEN REQUEST` and `Saved to GCS.` appear, then inspect the GCS log. Stop the old laptop's subscriber during this demonstration so the two instances do not compete for messages on the same subscription.
+
+Press Ctrl+C to stop. To restart in a new terminal, enter the repository directory, activate the same virtual environment, and run `python service2/subscriber.py` again. If token acquisition fails, check the login and Token Creator grant; if GCS returns `storage.objects.create` denied, check the service account's bucket permission.
 
 ### Run the provided HTTP client
 
