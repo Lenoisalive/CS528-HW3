@@ -47,8 +47,6 @@ This project uses:
 | Pull subscription | `forbidden-requests-sub` |
 | Log file | `gs://cs528hw2/forbidden_requests/log.txt` |
 
-The topic, subscription, and service account must already exist. Enable billing and the Cloud Functions, Cloud Run, Cloud Build, Artifact Registry, Cloud Storage, Pub/Sub, and IAM Credentials APIs before deployment.
-
 ```bash
 gcloud auth login
 gcloud config set project cs-528-508021
@@ -87,14 +85,6 @@ FUNCTION_URL='https://hw3-file-service-5tn6zthkwq-uc.a.run.app'
 Assume Service 1 is already deployed and your Google account has permission to impersonate the configured service account. On a new laptop, install Python 3.10+, Git, and Google Cloud CLI, then run:
 
 ```bash
-# Get the project (skip if already cloned)
-git clone https://github.com/Lenoisalive/CS528-HW3.git
-cd CS528-HW3
-
-# Sign in with your authorized Google account
-gcloud auth login
-gcloud config set project cs-528-508021
-
 # Install dependencies
 python3 -m venv "$HOME/.venvs/cs528-hw3-service2"
 source "$HOME/.venvs/cs528-hw3-service2/bin/activate"
